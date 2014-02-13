@@ -1,6 +1,11 @@
 ARM EABI Toolchain Builder
 ==========================
 
+ARM-CM4 STM32F429 Support
+-------------------------
+Set up by AndreasHassing - this fork compiles for CM4 and the ST unit: STM32F429, simply git clone to your home directory and run `make` in 'arm-eabi-toolchain'.
+
+
 This build system has been tested on Mac OS X 10.6 (should also work
 on 10.5) and Ubuntu 11.04.  Small modifications may be needed in order
 to make it work with other platforms.
