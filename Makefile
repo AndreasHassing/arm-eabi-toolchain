@@ -1,6 +1,8 @@
 # ARM EABI Toolchain Makefile
 #
 # Copyright (C) 2012 by James Snyder <jbsnyder@fanplastic.org>
+# Modified 2014 by Andreas Hassing <andreas@zenbit.dk>:
+# 	- Altered Makefile to support ARM-CM4 and the STM32F429
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
