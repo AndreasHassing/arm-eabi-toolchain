@@ -24,7 +24,7 @@
 
 SHELL   = /bin/bash
 UNAME  := $(shell uname)
-TARGET  = arm-none-eabi
+TARGET  = arm-cm4-eabi
 PREFIX ?= $(HOME)/arm-cs-tools
 PATH   := ${PREFIX}/bin:${PATH}
 
@@ -284,6 +284,7 @@ $(call MOD_CONFIG,gcc-first) : gmp mpfr mpc cross-binutils gcc-$(GCC_VERSION)-$(
 	--with-gnu-as --disable-nls --disable-libssp	\
 	--with-newlib --without-headers --disable-shared --enable-lto	\
 	--disable-threads --disable-libmudflap --disable-libgomp	\
+	--with-cpu=cortex-m4 --with-no-thumb-interwork --with-mode=thumb --with-float=softfp --with-fpu=fpv4-sp-d16	\
 	--disable-libstdcxx-pch --disable-libunwind-exceptions		\
 	--disable-decimal-float --enable-poison-system-directories 	\
 	--with-sysroot="$(PREFIX)/$(TARGET)"				\
@@ -306,6 +307,7 @@ $(call MOD_CONFIG,gcc-final) : gmp mpfr mpc cross-binutils cross-gcc-first cross
 	--enable-languages="c,c++" --with-gnu-ld --with-gnu-as		\
 	--with-newlib --disable-nls --disable-libssp			\
 	--disable-shared --enable-threads --with-headers=yes		\
+	--with-cpu=cortex-m4 --with-no-thumb-interwork --with-mode=thumb --with-float=softfp --with-fpu=fpv4-sp-d16	\
 	--disable-libmudflap --disable-libgomp	 --enable-lto		\
 	--disable-libstdcxx-pch	--enable-poison-system-directories 	\
 	--with-sysroot="$(PREFIX)/$(TARGET)"				\
